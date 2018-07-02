@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText enteredAmount;
     private SeekBar seekBar;
@@ -28,13 +28,8 @@ public class MainActivity extends AppCompatActivity {
         totalResultTextView = (TextView) findViewById(R.id.resultID);
         textViewSeekBar = (TextView) findViewById(R.id.textViewSeekBar);
 
-        calculateButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
+        calculateButton.setOnClickListener(this);
+        
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
@@ -53,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }
